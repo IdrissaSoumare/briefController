@@ -8,20 +8,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.laposte.briefPlantdex.model.Categorie;
+import fr.laposte.briefPlantdex.repository.CategorieRepository;
 
 @RestController
 @RequestMapping("/categorie")
-public class Api {
+public class CategorieController {
 
 	@Autowired
 	private List<Categorie> categories;
 
+	@Autowired
+	private CategorieRepository categorepo;
+
 	@GetMapping
-	public List<Categorie> getAll(){
-		System.out.println("toto");
+	public List<Categorie> getAll() {
+		categories = categorepo.findAll();
 		return categories;
 	}
-
-	
 
 }
