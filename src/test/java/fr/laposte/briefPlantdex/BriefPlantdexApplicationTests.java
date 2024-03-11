@@ -22,8 +22,8 @@ class BriefPlantdexApplicationTests {
 
 	@BeforeEach
 	void clean() {
-		categories.deleteAll();
 		plantes.deleteAll();
+		categories.deleteAll();
 	}
 
 	@Test
