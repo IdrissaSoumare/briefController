@@ -1,12 +1,15 @@
 package fr.laposte.briefPlantdex.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 @Entity
 @Data
@@ -17,13 +20,17 @@ public class Plante {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
+	@NonNull
 	private String nom;
 
+	@NonNull
+	@Enumerated(EnumType.STRING)
 	private Ensoleillement ensoleillement;
 
 	@ManyToOne
 	private Categorie categorie;
 
-	private int arrosage;
+	@NonNull
+	private Integer arrosage;
 
 }

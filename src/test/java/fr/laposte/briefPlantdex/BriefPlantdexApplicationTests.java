@@ -40,6 +40,15 @@ class BriefPlantdexApplicationTests {
 		Categorie baobab = new Categorie();
 		baobab.setLibelle("baobab");
 		categories.save(baobab);
+		
+		Categorie planteBulbe = new Categorie();
+		planteBulbe.setLibelle("plante bulbe");
+		categories.save(planteBulbe);
+		
+		Categorie herbaces = new Categorie();
+		herbaces.setLibelle("herbace");
+		categories.save(herbaces);
+	
 
 		Plante marguerite = new Plante();
 		marguerite.setArrosage(2);
