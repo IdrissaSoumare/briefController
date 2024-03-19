@@ -3,6 +3,7 @@ package fr.laposte.briefPlantdex;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -27,6 +28,11 @@ public class BriefPlantdexApplication {
 			// liste.
 	List<Plante> plantes() {
 		return new ArrayList<Plante>();
+	}
+
+	@Bean
+	ModelMapper getModelMapper() {
+		return new ModelMapper();
 	}
 
 }
